@@ -1,0 +1,17 @@
+name: 'Markdown to PDF'
+description: 'Compile Markdown into PDF file'
+author: 'Kaka Lin <vn503024@gmail.com>'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.md_path }}
+inputs:
+  md_file:
+    description: 'The source Markdown file'
+    require: true
+    default: './'
+outputs:
+  pdf_file:
+    description: 'The output PDF file'
+
